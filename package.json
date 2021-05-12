@@ -1,13 +1,20 @@
 {
   "name": "identity",
   "version": "1.0.0",
-  "description": "",
+  "description": "Zuri's assignment solution",
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js"
   },
-  "keywords": [],
+  "engines": {
+    "node": "12.16.0"
+  },
+  "keywords": [
+    "Zuri",
+    "node.js",
+    "heroku"
+  ],
   "author": "",
   "license": "ISC",
   "dependencies": {
