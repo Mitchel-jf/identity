@@ -5,6 +5,7 @@ require('dotenv').config()
 const connectDB = require('./mongoose') // this is a function I created for db connection
 const Identity = require('./identity_model') // this is a mongoose model
 
+const { PORT } = process.env
 // call the this method to perform the connection to the database
 connectDB()
 
@@ -64,8 +65,7 @@ app.get('/identity/:id', (req, res) => {
         if (err)
             return res.status(400).send('Error: Please make sure that your id is correct')
         else if (doc === null)
-            return res.json('Request successful but no document was found')
-        return res.status(500).send('Error: No document was found that matches the query')
+            return res.status(500).send('Error: No document was found that matches the query')
         return res.json({ message: `Document found`, data: doc })
     })
 })
@@ -140,5 +140,4 @@ app.delete('/identity/:id', (req, res) => {
 })
 
 // listen and serve the application
-app.listen(process.env.PORT, () => { console.log('Server started successfully') })
-
+app.listen(PORT, () => { console.log(`Server started successfully on port ${PORT}`) })
