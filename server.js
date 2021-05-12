@@ -104,7 +104,7 @@ app.patch('/identity/:id', (req, res) => {
 
     Identity.findByIdAndUpdate(id, { $set: body }, { new: true }, (err, doc) => {
         if (err)
-            return res.status(500).send('Error: Please make sure that your id is correct')
+            return res.status(500).send(err.message)
         else if (doc === null) return res.status(500).send('Update request failed. Could not ' +
             'find any document matching that id')
         return res.json({ message: 'Update request successful', data: doc })
