@@ -1,21 +1,20 @@
 # Documentation for the Identity API
-This API allows users to create an identity consisting of their email, name, and country, it also gives them the flexibility to manipulate their identity with whatever database operation they like. All successful requests returns a formart like this {message: Request successful, data: {}}.
+This API allows users to create an identity consisting of their email, name, and country, it also gives them the flexibility to manipulate their identity with whatever CRUD operation they like. All successful requests returns a JSON in this format {message: Request successful, data: {}}. All errors are returned as a text.
 
 # Base URL
 - https://identity-apis.herokuapp.com
-This is hosted on heroku
 
 # Endpoints or Routes
 The endpoint and their description  are as follows
 
-- ## Create Identity
+## Create Identity
 - <b>Endpoint:</b> /identity
 - <b>Method:</b> POST
 - <b>Description:</b> 
     - It creates a new identity. 
     - You must provide all the fields email, name and country in your request body as JSON or else this will return an error.
 
-- ## Read Identity
+## Read Identity
 Please note that all queries to the database are case sensistive.    
 This consists of 2 endpoints:
 
@@ -33,7 +32,7 @@ This consists of 2 endpoints:
     - It returns the identity in the database that matches the given id.
     - If the id is incorrect or the identity doesn't exist, it'll return an error.
 
-- ## Update Identity
+## Update Identity
 Please note that all queries to the database are case sensistive.   
 This consists of 2 endpoints:
 
@@ -54,7 +53,7 @@ This consists of 2 endpoints:
     - It updates the identity in the database that matches the given id. 
     - If the id is incorrect or the identity doesn't exist, it'll return an error.
 
-- ## Delete Identity
+## Delete Identity
 Please note that all queries to the database are case sensistive.  
 This consists of 2 endpoints:
 
@@ -64,9 +63,9 @@ This consists of 2 endpoints:
 - <b>Description:</b> 
     - It deletes the first identity in the database that matches the query parameters you provide. 
     - If you don't provide any parameter, it will return an error.
-    - This is a safe precaution to avoid delete all the entries in the database by mistake.
+    - This is a safe precaution to avoid deleting all the entries in the database by mistake.
 
-### 2. Fetch identities using an id
+### 2. Delete identities using an id
 - <b>Endpoint:</b> /identity/id
 - <b>Method:</b> DELETE
 - <b>Description:</b> 
