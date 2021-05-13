@@ -2,8 +2,8 @@
 const _ = require('lodash')
 const express = require('express')
 require('dotenv').config()
-const connectDB = require('./mongoose') // this is a function I created for db connection
-const Identity = require('./identity_model') // this is a mongoose model
+const connectDB = require('./db/mongoose') // this is a function I created for db connection
+const Identity = require('./models/identity_model') // this is a mongoose model
 
 const { PORT } = process.env
 // call the this method to perform the connection to the database
