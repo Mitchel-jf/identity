@@ -2,6 +2,8 @@
 This API allows users to create an identity consisting of their email, name, and country, it also gives them the flexibility to manipulate their identity with whatever CRUD operation they like. All successful requests returns a JSON in this format {message: Request successful, data: {}}. All errors are returned as a text.
 
 # Base URL
+This is the url to connect to the server hosted on heroku.  
+All endpoints must be prefixed by this url
 - https://identity-apis.herokuapp.com
 
 # Endpoints or Routes
